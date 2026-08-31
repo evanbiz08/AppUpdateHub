@@ -1,0 +1,7 @@
+{
+  "name": "FigmaRestore",
+  "version": "1.0.0",
+  "url": "http://10.0.0.1/downloads/FigmaRestore-v1.0.0.zip",
+  "notes": "🎉 FigmaRestore 1.0.0 首次正式发布\n1. 支持双运行引擎模式 (本机 Google 账号 / 个人专属 Gemini API Key)\n2. 智能识别并解析 Figma 设计稿结构，自动生成 Android XML 布局与样式\n3. 自动同步设计稿切图与资源，极速轻量 (2.3MB)",
+  "force": false
+}

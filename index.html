@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FigmaRestore | 版本与发布中心</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bold: #f0f6fc;
+      --accent: #58a6ff;
+      --badge-bg: rgba(56, 139, 253, 0.15);
+      --badge-border: rgba(56, 139, 253, 0.4);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 18px;
+    }
+    h1 {
+      color: var(--text-bold);
+      font-size: 24px;
+      margin: 0 0 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .subtitle {
+      color: #8b949e;
+      font-size: 13.5px;
+      margin: 0;
+    }
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px;
+    }
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .app-title-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .app-name {
+      color: var(--text-bold);
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .version-tag {
+      background: var(--badge-bg);
+      border: 1px solid var(--badge-border);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-family: monospace;
+    }
+    .notes-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      padding: 14px 16px;
+      font-size: 13px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+      white-space: pre-wrap;
+      color: #b1bac4;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .app-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #8b949e;
+    }
+    .btn-download {
+      background: #238636;
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      transition: background 0.15s;
+    }
+    .btn-download:hover {
+      background: #2ea043;
+    }
+    code {
+      background: rgba(110, 118, 129, 0.2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #f0f6fc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✨ FigmaRestore 版本中心</h1>
+      <p class="subtitle">基于 GitHub Raw 的极简版本控制与内网更新分发</p>
+    </header>
+
+    <div class="app-card">
+      <div class="app-header">
+        <div class="app-title-area">
+          <span class="app-name" id="appName">FigmaRestore</span>
+          <span class="version-tag" id="appVersion">v1.0.0</span>
+        </div>
+        <span>配置路径: <code>versions/figma-restore.json</code></span>
+      </div>
+      <div class="notes-box" id="appNotes">🎉 FigmaRestore 1.0.0 首次正式发布
+1. 支持双运行引擎模式 (本机 Google 账号 / 个人专属 Gemini API Key)
+2. 智能识别并解析 Figma 设计稿结构，自动生成 Android XML 布局与样式
+3. 自动同步设计稿切图与资源，极速轻量 (2.3MB)</div>
+      <div class="app-footer">
+        <span>Raw 接口: <code>versions/figma-restore.json</code></span>
+        <a href="http://10.0.0.1/downloads/FigmaRestore-v1.0.0.zip" id="btnDownload" class="btn-download" target="_blank">⬇️ 下载最新安装包</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        if (location.protocol.startsWith('http')) {
+          const res = await fetch('versions/figma-restore.json');
+          if (res.ok) {
+            const data = await res.json();
+            document.getElementById('appName').textContent = data.name || 'FigmaRestore';
+            document.getElementById('appVersion').textContent = 'v' + data.version;
+            document.getElementById('appNotes').textContent = data.notes || '';
+            document.getElementById('btnDownload').href = data.url || '#';
+          }
+        }
+      } catch (e) {
+        console.log('Using default static preview:', e);
+      }
+    }
+    loadData();
+  </script>
+</body>
+</html>
