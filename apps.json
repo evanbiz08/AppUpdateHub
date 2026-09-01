@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "repository": {
+    "remote": "origin",
+    "branch": "version_controller"
+  },
+  "apps": [
+    {
+      "id": "figma-restore",
+      "name": "FigmaRestore",
+      "bundleIdentifier": "com.figmarestore.app",
+      "archivePrefix": "FigmaRestore",
+      "feedPath": "appcast.xml",
+      "downloadsPath": "downloads",
+      "rawDownloadPrefix": "https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/",
+      "sparkleToolsPath": "../FigmaRestore/.build/artifacts/sparkle/Sparkle/bin",
+      "keyAccount": "ed25519",
+      "maximumVersions": 3
+    }
+  ]
+}
