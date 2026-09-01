@@ -120,7 +120,7 @@
   <div class="container">
     <header>
       <h1>✨ FigmaRestore 版本中心</h1>
-      <p class="subtitle">基于 GitHub Raw 的极简版本控制与内网更新分发</p>
+      <p class="subtitle">基于 Sparkle 2、GitHub Raw 与 EdDSA 签名的应用更新分发</p>
     </header>
 
     <div class="app-card">
@@ -129,15 +129,17 @@
           <span class="app-name" id="appName">FigmaRestore</span>
           <span class="version-tag" id="appVersion">v1.0.0</span>
         </div>
-        <span>配置路径: <code>versions/figma-restore.json</code></span>
+        <span>更新源: <code>appcast.xml</code></span>
       </div>
-      <div class="notes-box" id="appNotes">🎉 FigmaRestore 1.0.0 首次正式发布
-1. 支持双运行引擎模式 (本机 Google 账号 / 个人专属 Gemini API Key)
-2. 智能识别并解析 Figma 设计稿结构，自动生成 Android XML 布局与样式
-3. 自动同步设计稿切图与资源，极速轻量 (2.3MB)</div>
+      <div class="notes-box" id="appNotes">FigmaRestore 1.0.0
+
+- 支持 Figma 页面高保真还原、已有页面改造和多目标隔离处理。
+- 强化语义所有权审计，避免将可本地化文字与背景合并为整卡切图。
+- 优化 AGY Session、流水日志、结果状态和诊断包导出。
+- 接入 Sparkle 2，支持应用内检查、下载、验证、安装并重启更新。</div>
       <div class="app-footer">
-        <span>Raw 接口: <code>versions/figma-restore.json</code></span>
-        <a href="http://10.0.0.1/downloads/FigmaRestore-v1.0.0.zip" id="btnDownload" class="btn-download" target="_blank">⬇️ 下载最新安装包</a>
+        <span>签名校验: <code>EdDSA</code></span>
+        <a href="#" id="btnDownload" class="btn-download" target="_blank" rel="noopener">⬇️ 下载最新安装包</a>
       </div>
     </div>
   </div>
@@ -146,13 +148,21 @@
     async function loadData() {
       try {
         if (location.protocol.startsWith('http')) {
-          const res = await fetch('versions/figma-restore.json');
+          const res = await fetch('appcast.xml', { cache: 'no-store' });
           if (res.ok) {
-            const data = await res.json();
-            document.getElementById('appName').textContent = data.name || 'FigmaRestore';
-            document.getElementById('appVersion').textContent = 'v' + data.version;
-            document.getElementById('appNotes').textContent = data.notes || '';
-            document.getElementById('btnDownload').href = data.url || '#';
+            const xml = new DOMParser().parseFromString(await res.text(), 'application/xml');
+            const item = xml.querySelector('channel > item');
+            if (!item) return;
+
+            const versionNode = item.getElementsByTagNameNS('*', 'shortVersionString')[0];
+            const enclosure = item.querySelector('enclosure');
+            const description = item.querySelector('description');
+            const parserError = xml.querySelector('parsererror');
+            if (parserError) throw new Error('Invalid appcast XML');
+
+            document.getElementById('appVersion').textContent = 'v' + (versionNode?.textContent || '1.0.0');
+            document.getElementById('appNotes').textContent = description?.textContent || '暂无更新说明';
+            document.getElementById('btnDownload').href = enclosure?.getAttribute('url') || '#';
           }
         }
       } catch (e) {

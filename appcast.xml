@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>FigmaRestore</title>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Tue, 01 Sep 2026 11:42:00 +0800</pubDate>
+            <sparkle:version>1000000</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.0
+
+- 支持 Figma 页面高保真还原、已有页面改造和多目标隔离处理。
+- 强化语义所有权审计，避免将可本地化文字与背景合并为整卡切图。
+- 优化 AGY Session、流水日志、结果状态和诊断包导出。
+- 接入 Sparkle 2，支持应用内检查、下载、验证、安装并重启更新。
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.0.zip" length="3873781" type="application/octet-stream" sparkle:edSignature="/of26kiDRQTkpyo0gwD+GFig+hh4l7AWYcdvKgi8nwkwSnMJZbktHWgHPge5ttle6BPbqGrzm1+Mev8iA29gBg=="/>
+        </item>
+    </channel>
+</rss>
