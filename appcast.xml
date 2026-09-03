@@ -3,20 +3,23 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
-            <title>1.0.0</title>
-            <pubDate>Tue, 01 Sep 2026 11:42:00 +0800</pubDate>
-            <sparkle:version>1000000</sparkle:version>
-            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <title>1.0.3</title>
+            <pubDate>Thu, 03 Sep 2026 18:50:43 +0800</pubDate>
+            <sparkle:version>1000003</sparkle:version>
+            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.0
+            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.3
 
-- 支持 Figma 页面高保真还原、已有页面改造和多目标隔离处理。
-- 强化语义所有权审计，避免将可本地化文字与背景合并为整卡切图。
-- 优化 AGY Session、流水日志、结果状态和诊断包导出。
-- 接入 Sparkle 2，支持应用内检查、下载、验证、安装并重启更新。
+## 核心架构与体验升级
+
+- **全局 Agent 配置统一**：将底层 AI 运行引擎设置（AGY CLI / SDK / API Key）从 Figma 还原页面剥离，收口至左侧栏底部的「Agent 配置」，与环境检测统一成组。
+- **输入框原生升级**：方案审查与代码审查的多行输入框全面升级为原生 `MacTextEditor`，提供丝滑的原生平滑滚动、像素级占位符与撤销重做支持。
+- **全链路平滑渐变（fadingEdge）**：全面对齐 Figma 还原页面的边缘羽化效果，覆盖审查主配置列表、方案搜索浮层、历史归档卡片流、问题看板、各 Agent 横向对比、各轮产物详情、方案文档清单及实时日志终端。
+- **审查流水与日志增强**：执行日志流支持新增输出时平滑自动滚底；多 Agent 审查历史记录卡片支持链式完整展示所有参与审查的 Agent（如 `Codex → AGY`）。
+- **macOS 原生克制设计**：彻底清除看板与条目中过饱和的高亮紫色，采用柔和低对比的次要色与强调色，视觉更加舒适优雅。
 ]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.0.zip" length="3873781" type="application/octet-stream" sparkle:edSignature="/of26kiDRQTkpyo0gwD+GFig+hh4l7AWYcdvKgi8nwkwSnMJZbktHWgHPge5ttle6BPbqGrzm1+Mev8iA29gBg=="/>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.3.zip" length="5182656" type="application/octet-stream" sparkle:edSignature="Kk6fwW+gfV+n1uvEwpW0O/5g85HEBQc23cQppwpZZou1t7dsc/Hhl5MVu9Jv1o4hetXvjkzfxwIjswyBTvKHCQ=="/>
         </item>
     </channel>
 </rss>
