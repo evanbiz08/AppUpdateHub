@@ -1,15 +1,4 @@
-<?xml version="1.0" standalone="yes"?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
-    <channel>
-        <title>FigmaRestore</title>
-        <item>
-            <title>1.0.3</title>
-            <pubDate>Thu, 03 Sep 2026 18:50:43 +0800</pubDate>
-            <sparkle:version>1000003</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.3
+# FigmaRestore 1.0.3
 
 ## 核心架构与体验升级
 
@@ -18,8 +7,3 @@
 - **全链路平滑渐变（fadingEdge）**：全面对齐 Figma 还原页面的边缘羽化效果，覆盖审查主配置列表、方案搜索浮层、历史归档卡片流、问题看板、各 Agent 横向对比、各轮产物详情、方案文档清单及实时日志终端。
 - **审查流水与日志增强**：执行日志流支持新增输出时平滑自动滚底；多 Agent 审查历史记录卡片支持链式完整展示所有参与审查的 Agent（如 `Codex → AGY`）。
 - **macOS 原生克制设计**：彻底清除看板与条目中过饱和的高亮紫色，采用柔和低对比的次要色与强调色，视觉更加舒适优雅。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.3.zip" length="5182656" type="application/octet-stream" sparkle:edSignature="Kk6fwW+gfV+n1uvEwpW0O/5g85HEBQc23cQppwpZZou1t7dsc/Hhl5MVu9Jv1o4hetXvjkzfxwIjswyBTvKHCQ=="/>
-        </item>
-    </channel>
-</rss>
