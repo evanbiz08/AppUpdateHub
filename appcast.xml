@@ -3,6 +3,45 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.6</title>
+            <pubDate>Tue, 08 Sep 2026 12:25:23 +0800</pubDate>
+            <sparkle:version>1000006</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.6
+
+## 超大日志高性能流式下载与毫秒级过滤
+
+- **超大日志原生流式下载**：
+  - 针对 50MB~100MB+ 的超大日志文件，升级为服务端解密落盘与客户端原生 HTTP 分块流式下载架构，避免内存毛刺与编解码溢出，百兆日志秒级落盘。
+- **十万行日志异步过滤与 140+ 倍提速**：
+  - 过滤结果重构为响应式存储属性与 O(1) 访问切片，视图重绘主线程开销归零；
+  - 引入 200ms 输入防抖、协作式取消中断机制（`Task.isCancelled` 每 512 行快速退出）与批量更新防重入保护；
+  - 业务关键词与 Tag 纳秒级短路匹配，消除多余数组分配，搜索体验丝滑无卡顿。
+- **状态同步与旧数据清理闭环**：
+  - 切换归档、产品或遇到不可解析文件时，统一全量重置已解析数据源与筛选缓存，杜绝上一份日志残留。
+
+## 界面交互与视觉稳定性优化
+
+- **全局按钮 Loading 高度锁定**：
+  - 系统化消除 PlayBook、日志分析、引擎设置等模块在点击触发 Loading 转圈时按钮高度微增导致的界面跳动，严格锁定按钮尺寸与图标容器物理边界。
+- **日志过滤栏与文件列表优化**：
+  - 工具栏筛选区支持自适应水平滚动，防止窗口宽度较窄时被压缩；
+  - 归档内部文件列表默认展示核心业务日志（XLOG 与播放器日志），自动精简 RTC 临时通道文件。
+
+## 局域网协同与团队分发
+
+- **局域网服务地址适配**：默认连接局域网统一 MCP 端点（`10.86.11.195:17890`），支持团队成员多机直接协同使用。
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.6.zip" length="6013382" type="application/octet-stream" sparkle:edSignature="l33BewcPts61F2AY3BRhhLIBBEX6bfwK1OcuKIH3f2WioXOHXVyhAQaqEdfu52sEKNpP2cColuRhx4ClHm3LCg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000005.delta" sparkle:deltaFrom="1000005" length="686250" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Md94Z70ZArPNvXTnL6ao7f+ctIBAXiEnEmbnjHAwPaqpfY7QYNihzNjUiQv3QXG2V1Hn1a6dX19Vn/spq4Q1Bw=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000004.delta" sparkle:deltaFrom="1000004" length="998258" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="xJoYBoru/RGI4lCF++MNR97kJOYMi4T6bNP9TdpKeM9WvZbGddJhoV6BFzVrLyF6h9h3aI6smpA36SnBZ/JBAg=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000003.delta" sparkle:deltaFrom="1000003" length="1254266" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="4zAOSSZJC7vtxJTEKE3tUU0NMJwAyJ3BTFt/payLONjl0YL3P6zWMyez5g/4zM2m79OzuXTCVo0683ehQaMXBQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.5</title>
             <pubDate>Fri, 04 Sep 2026 20:30:02 +0800</pubDate>
             <sparkle:version>1000005</sparkle:version>
@@ -66,25 +105,6 @@
             <sparkle:deltas>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000004-1000003.delta" sparkle:deltaFrom="1000003" length="762974" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="qjClILQ/TfnCuO/l/MpX5h8FJN0QW77QNFG/BiEfWBgneRhFMXrzYIu3ZZMk1mqq5t6HnLx5Aaw08qrnRhBUCw=="/>
             </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.3</title>
-            <pubDate>Thu, 03 Sep 2026 18:50:43 +0800</pubDate>
-            <sparkle:version>1000003</sparkle:version>
-            <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.3
-
-## 核心架构与体验升级
-
-- **全局 Agent 配置统一**：将底层 AI 运行引擎设置（AGY CLI / SDK / API Key）从 Figma 还原页面剥离，收口至左侧栏底部的「Agent 配置」，与环境检测统一成组。
-- **输入框原生升级**：方案审查与代码审查的多行输入框全面升级为原生 `MacTextEditor`，提供丝滑的原生平滑滚动、像素级占位符与撤销重做支持。
-- **全链路平滑渐变（fadingEdge）**：全面对齐 Figma 还原页面的边缘羽化效果，覆盖审查主配置列表、方案搜索浮层、历史归档卡片流、问题看板、各 Agent 横向对比、各轮产物详情、方案文档清单及实时日志终端。
-- **审查流水与日志增强**：执行日志流支持新增输出时平滑自动滚底；多 Agent 审查历史记录卡片支持链式完整展示所有参与审查的 Agent（如 `Codex → AGY`）。
-- **macOS 原生克制设计**：彻底清除看板与条目中过饱和的高亮紫色，采用柔和低对比的次要色与强调色，视觉更加舒适优雅。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.3.zip" length="5182656" type="application/octet-stream" sparkle:edSignature="Kk6fwW+gfV+n1uvEwpW0O/5g85HEBQc23cQppwpZZou1t7dsc/Hhl5MVu9Jv1o4hetXvjkzfxwIjswyBTvKHCQ=="/>
         </item>
     </channel>
 </rss>
