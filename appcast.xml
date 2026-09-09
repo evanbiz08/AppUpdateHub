@@ -3,6 +3,75 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.7</title>
+            <pubDate>Wed, 09 Sep 2026 20:25:24 +0800</pubDate>
+            <sparkle:version>1000007</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.7
+
+## 日志核心架构解耦与状态机独立
+
+- **核心状态机解耦**：
+  - 重构日志分析核心逻辑，将其从全局大状态中彻底抽离至独立的 `UserLogState` 状态中枢，实现日志查询、解密、索引与流式过滤的完全状态隔离。
+  - 阻断高频日志数据更新对主业务生命周期及其他功能模块的状态穿透，消除跨模块无谓重算开销。
+
+## 二进制预索引与毫秒级内存检索
+
+- **底层字节折叠预索引**：
+  - 日志解析阶段预先构建符合 POSIX 规范的 UTF-8 大小写折叠字节序列（Byte Folding Index），与日志行对象深度绑定。
+  - 检索执行链路彻底摆脱耗时的运行时动态 Unicode 字符规范化处理，全面下沉为内存字节块高速范围检索（Byte Range Search），大规模日志检索耗时由数百毫秒骤降至 5ms 级。
+- **协同防抖与协作式取消链**：
+  - 引入 100ms 动态防抖策略，结合后台工作线程每 64 行主动巡检 `Task.checkCancellation` 的协作式中断机制，快速响应输入变更并即时熔断无效计算，消除 CPU 线程竞争与资源空转。
+
+## 智能候选集收窄与多级 LRU 淘汰机制
+
+- **范围收窄判定算法（Criteria Narrowing）**：
+  - 构建 `criteria.narrows` 集合判定逻辑：当关键词延伸或追加搜索条件时，自动判定并复用上一次筛选的有序候选集切片进行收窄计算，避免无谓回退至全量数据源扫描。
+- **双层内存 LRU 淘汰机制**：
+  - 对预处理日志文档与历史筛选结果设立基于时间与容量的双重内存配额管理（上限 8 份 / 96MB 内存成本控制），按最近最少使用原则自动淘汰冷数据，确保极端长会话下内存占用的平稳可控。
+
+## 归档时间序列归一化与稳定排序
+
+- **时间序列标准化**：
+  - 重构归档数据集合处理流水线，在数据接收入口统一将多源混合时间戳归一化为高精度物理 `Date` 对象，并结合初始索引实施稳定的时间倒序排序。
+  - 归档集合排序行为在数据源赋值时一次性完成并保持幂等，杜绝下游消费侧在遍历与处理时的重复计算。
+
+## 多代次并发防护（Generation Guard）与竞态消除
+
+- **三层代次校验机制**：
+  - 针对日志拉取（Fetch）、筛选计算（Filter）与本地文件导入（Import）分别建立独立的递增请求代次（Generation Guard）。
+  - 在所有后台任务、跨进程解密及长耗时磁盘 I/O 的返回点前置强校验屏障，未命中当前最新代次的结果直接静默丢弃，彻底消除异步并发带来的跨文件脏数据覆盖隐患。
+
+## 存储防碰撞寻址、配额轮转与原子落盘
+
+- **多维身份安全防碰撞**：
+  - 磁盘缓存寻址摒弃易碰撞的分隔符拼接模式，改由全维度身份元数据进行独立 JSON 规范化编码后计算 SHA-256 摘要，杜绝同名不同源文件的哈希碰撞。
+- **磁盘配额自动轮转**：
+  - `DecodedLogs/v2` 目录设立 512MB 与 7 天双重容量时间阈值清理机制；清理过程中严格保护当前活跃文件、内存 LRU 引用文件及 60 秒内新写入的安全窗口文件，杜绝并发清理引发的读取中断。
+- **流式分块追加与原子落盘**：
+  - 日志导出与中间缓存全面采用临时文件分块流式写入配合文件系统原子替换（Atomic Replacement），杜绝半写状态的文件暴露。
+
+## 高吞吐日志缓冲批处理流水线
+
+- **线程安全合并批处理（AgentLogBatcher）**：
+  - 针对高频日志回流构建 50ms 线程安全缓冲队列，将离散高频写入合并为批量发布，大幅削减线程调度与锁争用上下文切换开销。
+  - 在关键持久化落盘节点提供同步强刷（Flush）保障，确保核心执行与审查记录零丢失。
+
+## 归档导入安全防御与进程熔断
+
+- **深度路径与容量预检**：
+  - 本地压缩归档导入前执行轻量索引层静态审计，严格拦截 Zip Slip 目录穿越、符号链接越权逃逸及 Zip Bomb 膨胀攻击。
+- **子进程生命周期超时兜底**：
+  - 针对本地 xlog 解密及解压外部进程集成 90 秒超时检测与取消熔断逻辑，异常卡死状态下主动中断子进程，避免主应用流程被动挂起。
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.7.zip" length="6107586" type="application/octet-stream" sparkle:edSignature="cAw5E++bKCo60vUkgqwN13Yu75xueBoC0nH3lKBLpLPms5PadKE2IREfYXegRXTLTJmAL4//FKExc8QPD9rnAw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000007-1000006.delta" sparkle:deltaFrom="1000006" length="713582" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="I3MmARtS7+H3k7c8T3j2lLHs8oDUbTyXKr5HTTLmYPCXlsYCiziib2VDu9CAHa2PkU+hA3HbJ7rWd6Fa3WLnBw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.6</title>
             <pubDate>Tue, 08 Sep 2026 12:25:23 +0800</pubDate>
             <sparkle:version>1000006</sparkle:version>
@@ -39,71 +108,6 @@
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000005.delta" sparkle:deltaFrom="1000005" length="686250" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Md94Z70ZArPNvXTnL6ao7f+ctIBAXiEnEmbnjHAwPaqpfY7QYNihzNjUiQv3QXG2V1Hn1a6dX19Vn/spq4Q1Bw=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000004.delta" sparkle:deltaFrom="1000004" length="998258" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="xJoYBoru/RGI4lCF++MNR97kJOYMi4T6bNP9TdpKeM9WvZbGddJhoV6BFzVrLyF6h9h3aI6smpA36SnBZ/JBAg=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000003.delta" sparkle:deltaFrom="1000003" length="1254266" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="4zAOSSZJC7vtxJTEKE3tUU0NMJwAyJ3BTFt/payLONjl0YL3P6zWMyez5g/4zM2m79OzuXTCVo0683ehQaMXBQ=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.5</title>
-            <pubDate>Fri, 04 Sep 2026 20:30:02 +0800</pubDate>
-            <sparkle:version>1000005</sparkle:version>
-            <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.5
-
-## 新增功能：客户端用户日志分析工作台
-
-- **远程 xlog-mcp 极速直连**：全新上线「用户日志分析」工作台，直连远程 xlog-mcp 服务，支持按应用（Yoki 等）与用户 UID 实时拉取、解密与检索 Mars xlog 客户端日志。
-- **高精度栅格排版与严格对齐**：
-  - 日志时间列统一为 104pt 宽，精简为 `MM-dd HH:mm:ss`，隐藏冗余年份与毫秒；缺失时间行采用等宽透明占位；
-  - 级别徽章列统一为 18pt 宽；
-  - Tag 标签自适应排版：短 Tag 紧凑胶囊展示，长 Tag 智能微缩字体并超长省略（`..`），支持 Tooltip 悬浮提示与点击一键过滤；缺失 Tag 行等宽占位；
-  - 日志正文起始 X 坐标严格锁齐在 269pt，多行文本时各列徽章保持顶部对齐（Top 锚定），阅读舒适度显著提升。
-- **UID 上下文记忆与缓存秒开**：搜索日志归档后即使清空 UID 输入框，点击历史归档仍能通过上下文记忆直接从本地缓存秒开或远端拉取，彻底解决输入清空后的查询异常。
-- **智能日期与归档命名解析**：增强对短时间归档命名（如 `19_2506182135.zip` 等）的提取与日期适配，归档列表完整展示归档年份与时间。
-- **满屏沉浸式阅读模式**：进入日志工作台时支持提示切换「满屏模式」，充分利用屏幕高宽提升长日志查阅效率。
-
-## 全局界面与视觉规范打磨
-
-- **全流水日志分割线与字号优化**：Figma 还原流水日志、方案审查与代码审查日志统一增加清晰行分割线，调优行高与字体大小，长日志查阅一目了然。
-- **固定深色主题**：App 界面颜色固定为优雅深色系主题，避免跟随系统外观动态变化造成颜色反差或异常。
-- **系统等宽字体升级**：日志与代码展示全面采用 macOS 原生等宽字体，视觉层次更清晰。
-- **侧边栏视觉统一**：修正侧边栏底部「Agent 配置」图标颜色与文本颜色，保持高质感协调一致。
-- **网络传输安全适配**：配置应用网络传输安全规则（ATS），保障与远程 HTTP 服务的稳定连通。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.5.zip" length="5899572" type="application/octet-stream" sparkle:edSignature="swgEFz7eLkswZhnNffY6khIJdHKivwoVjILBuEsB9crsVzUinDoGO3dpLyEsQOUh9YL9DL3IpvseyQPzh9yFBw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000005-1000004.delta" sparkle:deltaFrom="1000004" length="828310" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="P8Tr0O0SA8OV3s/oq3vgaN9RciRHFJjDp06skvTR4T11foOJQgthIMA5h6eZuCKREkHwxkzB9veVs5nZ+T8ODw=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000005-1000003.delta" sparkle:deltaFrom="1000003" length="1119458" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="E+WENp8ifhNNPrb+NucyCvPXp3XvnD8Kll8vOr98+KAFddC+ITx+YK98txJVxSHS7wbquFDka0Gzxv8QAXjJDA=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.4</title>
-            <pubDate>Fri, 04 Sep 2026 16:34:44 +0800</pubDate>
-            <sparkle:version>1000004</sparkle:version>
-            <sparkle:shortVersionString>1.0.4</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.4
-
-## PlayBook 维护与安全合规加固
-
-- **Codex 审查只读沙箱加固**：初始审查阶段强制采用 `--sandbox read-only` 严格沙箱隔离，杜绝非受控写操作；仅在用户主动发起针对性微调时按需授予权限。
-- **工作区还原防丢保护**：还原操作移除硬删除，自动执行 `git stash push --include-untracked` 将未提交与未跟踪文件完整暂存备份，随时可通过 `git stash pop` 原样恢复；界面增加系统二次确认弹窗。
-- **Git 分支安全防护**：全面采用原生进程参数数组调用，杜绝 Shell 命令拼接与注入风险；前置白名单校验分支名格式。
-- **审查严重级别一致性**：统一问题严重等级（`level` / `severity`）的写入规范与模型反序列化解析，消除 `nonDeterminable` 状态误判。
-- **审查微调门禁逻辑补全**：修复复审门禁中缺少 High 等级判定的隐患，包含 High 级别问题时严格判定为 conditional 状态并阻止放行。
-- **Telemetry 配置防覆写保护**：重构配置解析逻辑，明确区分文件不存在与文件损坏，严禁在解析失败时使用空字典覆写已有宿主配置，写入采用原子落盘。
-- **远程更新真实比对**：检查更新时显式静默 fetch 远端追踪分支，确保本地 ahead/behind 差分完全实时准确。
-
-## 交互体验与细节打磨
-
-- **控制台整卡片响应与指针反馈**：底部执行控制台横向整行区域均支持点击展开/折叠，不再局限于左侧小标题，增加系统原生小手指针交互反馈。
-- **控制台静默折叠**：所有后台异步维护与同步任务触发时控制台保持默认折叠，禁止自动弹起打扰。
-- **消除统计页临界状态闪烁**：启动阶段前置异步预热 Telemetry 状态检测，切换时提供平滑加载占位，彻底消除初次打开时误触发未安装警告的瞬态闪烁。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.4.zip" length="5538114" type="application/octet-stream" sparkle:edSignature="jUK3dHmvNMzuIskF9OUMz+xJCf5Ts+6MS/5+PG/gGiuLCIAOwXEnPqk0laDxM2TYTwWQ2dc9Tm5aHDAK5vDpBQ=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000004-1000003.delta" sparkle:deltaFrom="1000003" length="762974" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="qjClILQ/TfnCuO/l/MpX5h8FJN0QW77QNFG/BiEfWBgneRhFMXrzYIu3ZZMk1mqq5t6HnLx5Aaw08qrnRhBUCw=="/>
             </sparkle:deltas>
         </item>
     </channel>
