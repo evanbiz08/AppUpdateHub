@@ -3,6 +3,39 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.8</title>
+            <pubDate>Thu, 10 Sep 2026 11:33:11 +0800</pubDate>
+            <sparkle:version>1000008</sparkle:version>
+            <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.8
+
+## 远程元数据驱动与动态配置下发架构
+
+- **单请求原子化配置与版本协同**：
+  - 升级版本检测流水线为元数据驱动模型，启动期通过单次轻量 HTTP 请求聚合完成「版本号比对」与「业务模块远程动态配置下发（如日志服务服务节点动态路由）」，降低网络开销并消除配置分发延迟。
+- **双通道容错与自适应降级链路**：
+  - 设立双通道容错机制：主通道基于轻量 JSON 快速反序列化提取最新元数据与环境变量；若遇网络抖动或元数据异常，系统自动无感降级至标准 Sparkle `appcast.xml` 备用解析链路，确保更新检测的高可用与高健壮性。
+
+## 响应式端点同步与多级配置仲裁
+
+- **多层级配置优先级仲裁机制**：
+  - 日志核心服务层（`UserLogService`）建立严格的配置优先级体系：本地开发者显式配置（`mcp_config.json`）> 动态远程下发持久化缓存（`UserDefaults`）> 局域网默认服务节点，兼顾本地离线联调灵活性与产运集群动态调度的统一性。
+- **事件驱动的端点热更新流水线**：
+  - 引入响应式通知机制，远程端点变更后通过系统级事件广播解耦驱动状态机中枢（`UserLogState`），即时刷新连接上下文并平滑触发轻量可用性巡检探针，实现服务节点的热切换与即时感知。
+
+## 发版交付流水线自动化元数据协同
+
+- **多源元数据原子化发布保障**：
+  - 构建打包流水线与分发源元数据同步闭环，在发布 Release 归档并生成 Ed25519 防篡改签名的同时，原子化更新分发注册表（`apps.json`）中的版本标识，彻底消除版本号与更新源配置之间的状态漂移。
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.8.zip" length="6114689" type="application/octet-stream" sparkle:edSignature="sPG/XoH8PNroRf8iNNiO0D+tfgwHjv88+KlqIRh+mxgaAgifcua6UnEOlf2+iOMt8wA65gHC3WGoxW5x9GVQDw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000008-1000007.delta" sparkle:deltaFrom="1000007" length="359690" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="nXzWg8l6HpRR5J6wJ2Sa4SE5J5CetJqzCxc1ZfpHydy2vucLxR9dntxLmx0NnbyklGFTorSI/S4VpMkjavLADw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.7</title>
             <pubDate>Wed, 09 Sep 2026 20:25:24 +0800</pubDate>
             <sparkle:version>1000007</sparkle:version>
@@ -69,45 +102,6 @@
             <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.7.zip" length="6107586" type="application/octet-stream" sparkle:edSignature="cAw5E++bKCo60vUkgqwN13Yu75xueBoC0nH3lKBLpLPms5PadKE2IREfYXegRXTLTJmAL4//FKExc8QPD9rnAw=="/>
             <sparkle:deltas>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000007-1000006.delta" sparkle:deltaFrom="1000006" length="713582" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="I3MmARtS7+H3k7c8T3j2lLHs8oDUbTyXKr5HTTLmYPCXlsYCiziib2VDu9CAHa2PkU+hA3HbJ7rWd6Fa3WLnBw=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.6</title>
-            <pubDate>Tue, 08 Sep 2026 12:25:23 +0800</pubDate>
-            <sparkle:version>1000006</sparkle:version>
-            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.6
-
-## 超大日志高性能流式下载与毫秒级过滤
-
-- **超大日志原生流式下载**：
-  - 针对 50MB~100MB+ 的超大日志文件，升级为服务端解密落盘与客户端原生 HTTP 分块流式下载架构，避免内存毛刺与编解码溢出，百兆日志秒级落盘。
-- **十万行日志异步过滤与 140+ 倍提速**：
-  - 过滤结果重构为响应式存储属性与 O(1) 访问切片，视图重绘主线程开销归零；
-  - 引入 200ms 输入防抖、协作式取消中断机制（`Task.isCancelled` 每 512 行快速退出）与批量更新防重入保护；
-  - 业务关键词与 Tag 纳秒级短路匹配，消除多余数组分配，搜索体验丝滑无卡顿。
-- **状态同步与旧数据清理闭环**：
-  - 切换归档、产品或遇到不可解析文件时，统一全量重置已解析数据源与筛选缓存，杜绝上一份日志残留。
-
-## 界面交互与视觉稳定性优化
-
-- **全局按钮 Loading 高度锁定**：
-  - 系统化消除 PlayBook、日志分析、引擎设置等模块在点击触发 Loading 转圈时按钮高度微增导致的界面跳动，严格锁定按钮尺寸与图标容器物理边界。
-- **日志过滤栏与文件列表优化**：
-  - 工具栏筛选区支持自适应水平滚动，防止窗口宽度较窄时被压缩；
-  - 归档内部文件列表默认展示核心业务日志（XLOG 与播放器日志），自动精简 RTC 临时通道文件。
-
-## 局域网协同与团队分发
-
-- **局域网服务地址适配**：默认连接局域网统一 MCP 端点（`10.86.11.195:17890`），支持团队成员多机直接协同使用。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.6.zip" length="6013382" type="application/octet-stream" sparkle:edSignature="l33BewcPts61F2AY3BRhhLIBBEX6bfwK1OcuKIH3f2WioXOHXVyhAQaqEdfu52sEKNpP2cColuRhx4ClHm3LCg=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000005.delta" sparkle:deltaFrom="1000005" length="686250" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Md94Z70ZArPNvXTnL6ao7f+ctIBAXiEnEmbnjHAwPaqpfY7QYNihzNjUiQv3QXG2V1Hn1a6dX19Vn/spq4Q1Bw=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000004.delta" sparkle:deltaFrom="1000004" length="998258" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="xJoYBoru/RGI4lCF++MNR97kJOYMi4T6bNP9TdpKeM9WvZbGddJhoV6BFzVrLyF6h9h3aI6smpA36SnBZ/JBAg=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000006-1000003.delta" sparkle:deltaFrom="1000003" length="1254266" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="4zAOSSZJC7vtxJTEKE3tUU0NMJwAyJ3BTFt/payLONjl0YL3P6zWMyez5g/4zM2m79OzuXTCVo0683ehQaMXBQ=="/>
             </sparkle:deltas>
         </item>
     </channel>
