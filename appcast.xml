@@ -9,26 +9,7 @@
             <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[# FigmaRestore 1.0.8
-
-## 远程元数据驱动与动态配置下发架构
-
-- **单请求原子化配置与版本协同**：
-  - 升级版本检测流水线为元数据驱动模型，启动期通过单次轻量 HTTP 请求聚合完成「版本号比对」与「业务模块远程动态配置下发（如日志服务服务节点动态路由）」，降低网络开销并消除配置分发延迟。
-- **双通道容错与自适应降级链路**：
-  - 设立双通道容错机制：主通道基于轻量 JSON 快速反序列化提取最新元数据与环境变量；若遇网络抖动或元数据异常，系统自动无感降级至标准 Sparkle `appcast.xml` 备用解析链路，确保更新检测的高可用与高健壮性。
-
-## 响应式端点同步与多级配置仲裁
-
-- **多层级配置优先级仲裁机制**：
-  - 日志核心服务层（`UserLogService`）建立严格的配置优先级体系：本地开发者显式配置（`mcp_config.json`）> 动态远程下发持久化缓存（`UserDefaults`）> 局域网默认服务节点，兼顾本地离线联调灵活性与产运集群动态调度的统一性。
-- **事件驱动的端点热更新流水线**：
-  - 引入响应式通知机制，远程端点变更后通过系统级事件广播解耦驱动状态机中枢（`UserLogState`），即时刷新连接上下文并平滑触发轻量可用性巡检探针，实现服务节点的热切换与即时感知。
-
-## 发版交付流水线自动化元数据协同
-
-- **多源元数据原子化发布保障**：
-  - 构建打包流水线与分发源元数据同步闭环，在发布 Release 归档并生成 Ed25519 防篡改签名的同时，原子化更新分发注册表（`apps.json`）中的版本标识，彻底消除版本号与更新源配置之间的状态漂移。
+            <description sparkle:format="markdown"><![CDATA[修改xMCP地址
 ]]></description>
             <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.8.zip" length="6114689" type="application/octet-stream" sparkle:edSignature="sPG/XoH8PNroRf8iNNiO0D+tfgwHjv88+KlqIRh+mxgaAgifcua6UnEOlf2+iOMt8wA65gHC3WGoxW5x9GVQDw=="/>
             <sparkle:deltas>
