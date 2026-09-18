@@ -1,0 +1,6 @@
+- 新增 AI 资产管理能力，统一纳管 Skill、Agent 角色、Rules 规范、MCP 服务与 Hook 钩子
+- 支持多 Agent 原生配置逆向扫描与集中归档，实现统一分发与原地符号软链
+- 支持 MCP 与 Hook 配置非破坏性修改与自动备份保护，避免覆盖现有配置
+- 完善 Rules 规范管理，聚焦 Claude、Grok 与 Antigravity 原生 Markdown 规则
+- 优化缺失 CrispPNG 时的原图降级处理策略，保障切图资源处理流程稳定
+- 强化中央 Hub 迁移与回滚保护机制，严格校验备份前置条件与重试幂等性
