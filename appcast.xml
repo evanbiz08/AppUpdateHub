@@ -3,6 +3,32 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.12</title>
+            <pubDate>Sat, 19 Sep 2026 17:16:34 +0800</pubDate>
+            <sparkle:version>1000012</sparkle:version>
+            <sparkle:shortVersionString>1.0.12</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[- 适配 macOS 27 设计风格，引入 Liquid Glass 材质系统与环境柔光阴影
+- 支持跟随系统、深色模式与浅色模式三态主题切换，配置持久化并实时响应
+- 重构 AI 资产管理（Skill / Hook / Rule / MCP / Agent 角色）底层性能架构：
+  - 新增本地持久化与内存多级缓存，实现资产管理页面 0ms 秒开直出
+  - 引入异步增量 Diff 比对与保鲜防抖，杜绝频繁磁盘扫描与全局级联重绘
+  - 单行卡片全面 Equatable 记忆化优化，保障资产列表高速平滑滚动
+  - Tab 容器常驻保持，实现五大资产视图 0 延迟瞬切并完整保留滚动位置
+  - 优化 6 大 Agent 官方图标为统一纯白圆形微胶囊底座，启动时全局预加载
+- 优化打包与发布流水线，修复 macOS 27 下 SDK 编译兼容性与极速增量构建
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.12.zip" length="7958126" type="application/octet-stream" sparkle:edSignature="LmgTpOXjodNmVtTacmRLQhlQunrWciojMZGSPe6xhLQNwsUxFSB0hWhH1dyPuMeeZ0vFm2aJbnb3G5D6ybPNCw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000011.delta" sparkle:deltaFrom="1000011" length="1154994" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="LUSumeTrLFRd0KR01xpzoyIbvYTKLRfqrRWn3WOMguvK0EcMDoof6uCEmsRft/Tlmjv+MWdS+Jzv1lbG6gNJBA=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000010.delta" sparkle:deltaFrom="1000010" length="2299938" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="W2iLw4XYfoJPeuOCAKKimPpvieSXuweUlWPS9+i9HAzOYVMAF/uVCewAsZ7oV+gYi5mJuhDlQRHvnuIKkMqfAQ=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000009.delta" sparkle:deltaFrom="1000009" length="2880030" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="JQYIZTdYe4Hcb5YY+HNspVKk0u4r0cOFzayYfVHS1t9D+NPwq1TXNI+rETi/gxjNqpsK7zi9Le3Q4bS877N3Bw=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000008.delta" sparkle:deltaFrom="1000008" length="3001622" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="iVRSDb+N0KoeE8TNp/XRuIQsB3F34zukVGGhse4tbskHXa/cN6oSm31mM8oBDgq5euXypzQMMdgXeSZ8N7yACg=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000007.delta" sparkle:deltaFrom="1000007" length="3006890" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="H1o33A3xo6k8auv1tLeBvZUbURuJZAXcVHSxzDWPm+ZtCpJqXfsiaOM6GI53ffhFkjy0wgRZzoNdzgCDrEM8BA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.11</title>
             <pubDate>Fri, 18 Sep 2026 14:57:32 +0800</pubDate>
             <sparkle:version>1000011</sparkle:version>
@@ -22,27 +48,6 @@
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000009.delta" sparkle:deltaFrom="1000009" length="2701110" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="tczP5vjijmf4dYo1DSaA1xEdBErm4eYBCMSwnGhGCQcB2tnLh86hw9yPpRkksZIStcidIUXE76tH88+8IzdFBQ=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000008.delta" sparkle:deltaFrom="1000008" length="2843666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Q2+YeZhUFjI3T018j4wEKgBJT3LAxxgvqfL4dbaVfQYcVfBiSoThT0A8L5kRERI+TJLRVeM3WjuhAsyYvx+eAQ=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000007.delta" sparkle:deltaFrom="1000007" length="2831034" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="a6Af5IAAuOLkFtfjLIP7g93akbYHJh+GMPR/27rfqMi2462+WQr8jTEE8Iu0RjBmW2yp0xgtk7Dt0Mj24wBFAA=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.10</title>
-            <pubDate>Tue, 15 Sep 2026 17:04:57 +0800</pubDate>
-            <sparkle:version>1000010</sparkle:version>
-            <sparkle:shortVersionString>1.0.10</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[- 修复打包后系统按钮、选择器显示旧版样式的问题，增加 SDK 与构建产物校验
-- 修复审查空报告误判通过、微调停止状态异常及历史报告结论不一致的问题
-- 保留原始方案输入和问题闭环记录，支持复制审查问题看板
-- 审查期间检测到工程变更时保留用户改动，不再自动回滚或清理工作区
-- 修复 PlayBook 分支切换、备份失败处理和检查更新状态误报
-- 移除 App 内的还原 MCP 服务，改为用户手动发起与交接
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.10.zip" length="6405362" type="application/octet-stream" sparkle:edSignature="dJ9DODJY8hQooFaVaH25VGmEGIHKQrV1MgyPN4/00Eu8wjE3RAVW3ckXZFhM62J1qcrT/pZt/jwMyL3dD2C/Ag=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000010-1000009.delta" sparkle:deltaFrom="1000009" length="1269234" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="jsXd92k4uFwrxiocYcOkgG2Lq7ylx/6KOHSYK9B6VTJTmVyHV5JUM0UaMg3y7fEHbjc7dPUMNsFAfxOkGj2FCQ=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000010-1000008.delta" sparkle:deltaFrom="1000008" length="1437898" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="JQ+7ms2MnYF60LlhZH50s9VNyeiqPxRy3qTwTLCsfWOzQdg9SeCIO3cNvEQMUvCyUGwOteRtgLSH9gpS999iBg=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000010-1000007.delta" sparkle:deltaFrom="1000007" length="1443238" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="TsEcAzOYi89GDbcyBBIlirI4AOAE6ygmQlTGV6RJaMT3u5LRixWJUmvasb8tpo7hRoZswJqXDt0tN1P+u6yUDQ=="/>
             </sparkle:deltas>
         </item>
     </channel>
