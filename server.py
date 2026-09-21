@@ -333,13 +333,21 @@ class ReleaseStore:
             appcast_output = run(command).stdout.strip()
             relative_feed = str(feed.relative_to(ROOT))
             relative_downloads = str(downloads.relative_to(ROOT))
-            run(["git", "add", "-A", "--", relative_feed, relative_downloads])
+            relative_config = str(CONFIG_PATH.relative_to(ROOT))
+
+            # 同步更新 apps.json 中的 latestVersion
+            for cfg_app in config.get("apps", []):
+                if cfg_app.get("id") == app["id"]:
+                    cfg_app["latestVersion"] = record["version"]
+            CONFIG_PATH.write_text(json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+            run(["git", "add", "-A", "--", relative_feed, relative_downloads, relative_config])
             staged = run(["git", "diff", "--cached", "--name-only"]).stdout.splitlines()
-            allowed_roots = (relative_feed, relative_downloads + "/")
+            allowed_roots = (relative_feed, relative_downloads + "/", relative_config)
             unexpected = [
                 path
                 for path in staged
-                if path != allowed_roots[0] and not path.startswith(allowed_roots[1])
+                if path != allowed_roots[0] and path != allowed_roots[2] and not path.startswith(allowed_roots[1])
             ]
             if unexpected:
                 raise ConsoleError(f"检测到非发布文件进入暂存区：{', '.join(unexpected)}")
@@ -384,8 +392,8 @@ class ReleaseStore:
                 shutil.rmtree(target)
             else:
                 target.unlink(missing_ok=True)
-        run(["git", "restore", "--staged", "--", feed, downloads], check=False)
-        run(["git", "restore", "--worktree", "--", feed, downloads], check=False)
+        run(["git", "restore", "--staged", "--", feed, downloads, str(CONFIG_PATH)], check=False)
+        run(["git", "restore", "--worktree", "--", feed, downloads, str(CONFIG_PATH)], check=False)
 
     def _purge_expired_uploads(self) -> None:
         cutoff = time.time() - 2 * 60 * 60
