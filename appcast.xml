@@ -3,6 +3,29 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.14</title>
+            <pubDate>Wed, 23 Sep 2026 15:02:21 +0800</pubDate>
+            <sparkle:version>1000014</sparkle:version>
+            <sparkle:shortVersionString>1.0.14</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[- PlayBook Telemetry 遥测引擎升级：
+  - 遥测采集器 collector 与上报逻辑健壮性提升，完善多场景执行指标统计与追踪
+- AI 资产管理模块全面升级与重构：
+  - 重构资产表格与绑定操作流，优化各 Agent 资产状态联动与一键解绑/绑定体验
+  - 深度优化 HookManager 服务及 CodexHookToml 配置读写，提升多 Agent 场景下的稳定性
+  - 规范化 Agent 资产视图布局与品牌视觉，统一各 Agent 头像及徽标展示
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.14.zip" length="12113800" type="application/octet-stream" sparkle:edSignature="FPjphGpPkE5DqMSh4UFIAaN1q76VLcYnVuAUKJJhGbWje10PG3sscAsV5dLfXnqmxaCf+UPRg3d5qjPcFEOhBg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000014-1000013.delta" sparkle:deltaFrom="1000013" length="6484910" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="YO26pegpSUPXuyOl0fvXVXuUuvEBUU/WVfmhZ8qSpK42Tfqfw6zboC6TebPYtUr/UXXbKOot+f+qnEv7LFcBDg=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000014-1000012.delta" sparkle:deltaFrom="1000012" length="7007302" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="snRDuxaeSx8KNV6pQx7mqRZCLR2XowkKa5RaUNve5Z3r2Dal8Mea+m9l9NOHywY5pVJGdT4HhPV9GzAHUwkxBg=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000014-1000011.delta" sparkle:deltaFrom="1000011" length="7261882" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="BVpC+hh3UeCr1Sz55fwagoWPxLlAK070gv2+NeJtDObs12mPn++lZIqfTo37Wf/MCzQ0qYpldDlYVfuTTTUMBg=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000014-1000010.delta" sparkle:deltaFrom="1000010" length="8235386" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="F6iHVVEpQVtQubGdBldzINUNJepoRWQ+Xdyw4q07g0kq/c/cZY1l3xaOvwMtqcNmQWTlJwt5jRnED4UK2i8lBA=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000014-1000009.delta" sparkle:deltaFrom="1000009" length="8647834" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="c5pb4aTngWN1Kqp1nrVVjXGp45peY+yTfwuFH0/LBChDGloxf0iL8qpJj7rJDN7zVA3+qn9lRlgws4KftiIlAg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.13</title>
             <pubDate>Mon, 21 Sep 2026 18:29:33 +0800</pubDate>
             <sparkle:version>1000013</sparkle:version>
@@ -45,28 +68,6 @@
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000009.delta" sparkle:deltaFrom="1000009" length="2880030" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="JQYIZTdYe4Hcb5YY+HNspVKk0u4r0cOFzayYfVHS1t9D+NPwq1TXNI+rETi/gxjNqpsK7zi9Le3Q4bS877N3Bw=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000008.delta" sparkle:deltaFrom="1000008" length="3001622" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="iVRSDb+N0KoeE8TNp/XRuIQsB3F34zukVGGhse4tbskHXa/cN6oSm31mM8oBDgq5euXypzQMMdgXeSZ8N7yACg=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000012-1000007.delta" sparkle:deltaFrom="1000007" length="3006890" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="H1o33A3xo6k8auv1tLeBvZUbURuJZAXcVHSxzDWPm+ZtCpJqXfsiaOM6GI53ffhFkjy0wgRZzoNdzgCDrEM8BA=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.11</title>
-            <pubDate>Fri, 18 Sep 2026 14:57:32 +0800</pubDate>
-            <sparkle:version>1000011</sparkle:version>
-            <sparkle:shortVersionString>1.0.11</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[- 新增 AI 资产管理能力，统一纳管 Skill、Agent 角色、Rules 规范、MCP 服务与 Hook 钩子
-- 支持多 Agent 原生配置逆向扫描与集中归档，实现统一分发与原地符号软链
-- 支持 MCP 与 Hook 配置非破坏性修改与自动备份保护，避免覆盖现有配置
-- 完善 Rules 规范管理，聚焦 Claude、Grok 与 Antigravity 原生 Markdown 规则
-- 优化缺失 CrispPNG 时的原图降级处理策略，保障切图资源处理流程稳定
-- 强化中央 Hub 迁移与回滚保护机制，严格校验备份前置条件与重试幂等性
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore-v1.0.11.zip" length="7845312" type="application/octet-stream" sparkle:edSignature="oO9M+Rv2Y1+jeaoPDcZwz/h/BwDgbEeseHuubZ4Hatu2AePHqTKmmuuBgyfiSd6oOoExPMUJQSm07y9POaXkBg=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000010.delta" sparkle:deltaFrom="1000010" length="2099910" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="HbgzZYnMctiCvUKFWLoPq9JnnatFE/Tfm0w+B/OhzJKD1Y3rphdOmGZi5JZZTA9H+yiYdtatPxhu4oaDbp6WAw=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000009.delta" sparkle:deltaFrom="1000009" length="2701110" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="tczP5vjijmf4dYo1DSaA1xEdBErm4eYBCMSwnGhGCQcB2tnLh86hw9yPpRkksZIStcidIUXE76tH88+8IzdFBQ=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000008.delta" sparkle:deltaFrom="1000008" length="2843666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Q2+YeZhUFjI3T018j4wEKgBJT3LAxxgvqfL4dbaVfQYcVfBiSoThT0A8L5kRERI+TJLRVeM3WjuhAsyYvx+eAQ=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/FigmaRestore1000011-1000007.delta" sparkle:deltaFrom="1000007" length="2831034" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="a6Af5IAAuOLkFtfjLIP7g93akbYHJh+GMPR/27rfqMi2462+WQr8jTEE8Iu0RjBmW2yp0xgtk7Dt0Mj24wBFAA=="/>
             </sparkle:deltas>
         </item>
     </channel>
