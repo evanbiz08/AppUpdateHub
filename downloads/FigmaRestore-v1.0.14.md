@@ -1,0 +1,6 @@
+- PlayBook Telemetry 遥测引擎升级：
+  - 遥测采集器 collector 与上报逻辑健壮性提升，完善多场景执行指标统计与追踪
+- AI 资产管理模块全面升级与重构：
+  - 重构资产表格与绑定操作流，优化各 Agent 资产状态联动与一键解绑/绑定体验
+  - 深度优化 HookManager 服务及 CodexHookToml 配置读写，提升多 Agent 场景下的稳定性
+  - 规范化 Agent 资产视图布局与品牌视觉，统一各 Agent 头像及徽标展示
