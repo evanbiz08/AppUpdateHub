@@ -10,14 +10,12 @@
             <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
             <description sparkle:format="markdown"><![CDATA[- 优化环境检测机制：应用启动时即在后台执行环境预检，打开环境检测页面时无需再次等待加载。
+- 修复日志查询功能的内存泄漏与占用过高问题。
+- 大幅瘦身应用包体积：移除冗余多套图标与资源，统一采用默认原生图标，剔除二进制符号表。
 ]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/WeDeck-v1.0.16.zip" length="43504786" type="application/octet-stream" sparkle:edSignature="osu/uc9YFp2zzwrcodBmgd4Oh6wJi3v+Igh421rC72J2iPbErVCXAEWzOmUuEynpb4YePd0fhGWtJVVu+vnwCQ=="/>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/WeDeck-v1.0.16.zip" length="6761188" type="application/octet-stream" sparkle:edSignature="EMMivOEqkndof9lCgdMACJaQ6oC3F4/Ia2NWsg7UzzU+iLxX8l825QvO8eV6k5459zY0wtqVhOuwpfbi8Z0ICQ=="/>
             <sparkle:deltas>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000016-1000015.delta" sparkle:deltaFrom="1000015" length="1146154" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="md5QC3rwEJ5egT6PlHSrc5+4RwItAMwbujiZblJZyhwMrCYGBar4I0TSFdLy1nFrALBrKX6CmXJi3Xj1MF+3Bw=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000016-1000014.delta" sparkle:deltaFrom="1000014" length="36267690" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ewHReVY42iMAYGWmHhfPe1+DreE6Ups8zHGt4Unx53/fi8DUGiDcNj6vfJki4tJ4Z3OBBTyXsBponZsbhAaRDA=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000016-1000013.delta" sparkle:deltaFrom="1000013" length="36376546" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="CVLQ0bACiADsww6eKV4/bj9JnJ03jMYPME8bFHQfc2LQpweYgWDbIg3QkQTx/wigAKbw2DvldmjKV7x8CQUlBA=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000016-1000012.delta" sparkle:deltaFrom="1000012" length="36756666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="a3slgR33jyjMfjC1LY5v/fyYNPfAwcuqGdDIqY3PnCzJ7KBgz9Wyz70O11FLcEHXRusqd/0xhmAPVAl91tsnBw=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000016-1000011.delta" sparkle:deltaFrom="1000011" length="36953670" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="B7X+2uybsIrcBOpXKpCAosJRa4VYshANojSg1lI4y1zcnQym6Hj1V2em8evF8+ARgqBDbsV0lOHRBtCLBCElBg=="/>
             </sparkle:deltas>
         </item>
         <item>
