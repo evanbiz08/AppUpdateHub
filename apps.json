@@ -16,7 +16,7 @@
       "sparkleToolsPath": "../FigmaRestore/.build/artifacts/sparkle/Sparkle/bin",
       "keyAccount": "ed25519",
       "maximumVersions": 3,
-      "latestVersion": "1.0.15",
+      "latestVersion": "1.0.16",
       "appConfig": {
         "xlogEndpoint": "http://10.86.11.102:17890/mcp"
       }
