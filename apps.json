@@ -18,7 +18,8 @@
       "maximumVersions": 3,
       "latestVersion": "1.0.16",
       "appConfig": {
-        "xlogEndpoint": "http://10.86.11.113:17890/mcp"
+        "xlogEndpoint": "http://10.86.11.113:17890/mcp",
+        "xlogToken": "c7438e8549925e0c50d75a61141df904321287cba14d3ec159b34bf491dc5f96"
       }
     }
   ]
