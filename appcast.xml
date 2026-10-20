@@ -18,23 +18,5 @@
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000016-1000015.delta" sparkle:deltaFrom="1000015" length="1146154" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="md5QC3rwEJ5egT6PlHSrc5+4RwItAMwbujiZblJZyhwMrCYGBar4I0TSFdLy1nFrALBrKX6CmXJi3Xj1MF+3Bw=="/>
             </sparkle:deltas>
         </item>
-        <item>
-            <title>1.0.15</title>
-            <pubDate>Fri, 25 Sep 2026 17:01:57 +0800</pubDate>
-            <sparkle:version>1000015</sparkle:version>
-            <sparkle:shortVersionString>1.0.15</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[- 日志查询功能存在内存泄漏，修复内存泄漏问题。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/WeDeck-v1.0.15.zip" length="43352237" type="application/octet-stream" sparkle:edSignature="3EQm6NfZ8WlQsoJ1NajPRuylcQSljqjJf82GIIk8NpuIDLsbSgS/DBjEIHHjjVERx7GKuEx66FxPKPqb+Ed/BQ=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000015-1000014.delta" sparkle:deltaFrom="1000014" length="35893066" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="I4znvkDeKPXB8J7QVCqXpQbn9plcYuQiiHW2ghTuXWYwAANjuY6WhEEuaXfS3SrAED2YrV2R3UP/gL4WNSlvBQ=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000015-1000013.delta" sparkle:deltaFrom="1000013" length="36086054" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="53/SgzlOcK3m7v04uwbvkzsPDu1wQhorLVRdZkEb+w6icXu6U5/sqhW0/BC6GyO1qK+Oh3+Dps8jpEy/E/HtAQ=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000015-1000012.delta" sparkle:deltaFrom="1000012" length="36488622" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="fxiGuCj3Yb6SpfVbWfLXFjE/E3U1W13YQb5hJxoSCseZPw0aXkPB58gOjtWMRjVBWuVDKRSx+iVLt0+HxiHKBg=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000015-1000011.delta" sparkle:deltaFrom="1000011" length="36733914" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="9hlZTA+RaNfv/uHT8T+eD+QBsnEfdLUI+ISJhLrYebcEF1xlkxjchvM/ezg7FyWGI4CtBb81MgvNFgNqs7t9DQ=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000015-1000010.delta" sparkle:deltaFrom="1000010" length="37682022" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977616" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="rZZLlxGKd04EazpQrjI4P6ltLBojePTe3MR/aumjJotWY/9MSHCJqRfnN7cCv5gHNK4Lw7wbl7s1CEWSXbbvBQ=="/>
-            </sparkle:deltas>
-        </item>
     </channel>
 </rss>
