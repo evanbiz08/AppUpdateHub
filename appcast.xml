@@ -3,6 +3,24 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.17</title>
+            <pubDate>Wed, 04 Nov 2026 19:04:32 +0800</pubDate>
+            <sparkle:version>1000017</sparkle:version>
+            <sparkle:shortVersionString>1.0.17</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[- 新增「自动化UI」：支持 AI 界面验收、问题复现、视觉检查和固定操作回放，首批适配 Lama、Yoki、Waka。
+- 新增 YAML 用例库，支持导入、导出分享、一键运行；执行记录自动保存，支持删除历史记录。
+- 新增虚拟机管理，集成 avdslim 1.0.16，支持模拟器启动、停止、配置与精简恢复。
+- 修复模拟器退出后仍显示运行中、异常残留进程无法停止的问题，补充 SDK 模拟器组件缺失提示。
+- 简化侧栏、环境检测和 Agent 配置布局，次要功能默认收起，默认打开用户日志并优先展示 Codex。
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/WeDeck-v1.0.17.zip" length="13713046" type="application/octet-stream" sparkle:edSignature="wZVfHZw4QMN7S0gaAr67AcrsA6dV9J/1SkfrK9B/JUhXY7DC8q6gniW8SPd3tgFQAKzfT+D7TFiA3mqVQvvMDg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000017-1000016.delta" sparkle:deltaFrom="1000016" length="6379194" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Jh8Gozm0VvrbvXnIlnnf1Zs8hU5gx0/lpzX6kn+PnzRpnlCR2CnCuLAURluuXVFY3/Jfgyf4eRI0yyLe4+Q6CA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.16</title>
             <pubDate>Fri, 09 Oct 2026 11:54:42 +0800</pubDate>
             <sparkle:version>1000016</sparkle:version>
