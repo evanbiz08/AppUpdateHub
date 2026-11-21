@@ -3,6 +3,29 @@
     <channel>
         <title>FigmaRestore</title>
         <item>
+            <title>1.0.21</title>
+            <pubDate>Sat, 21 Nov 2026 18:03:46 +0800</pubDate>
+            <sparkle:version>1000021</sparkle:version>
+            <sparkle:shortVersionString>1.0.21</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <description sparkle:format="markdown"><![CDATA[# Controller Agent 更新和发布
+
+- 新增「SVGA 检查」：最多同时预览 4 个动效，可切换四种画布背景，也可在 Finder 中用 We Deck 打开 `.svga` 文件。
+- 支持循环浏览帧缩略图。播放或拖动进度条时，列表实时跟随当前帧；点击任一缩略图可暂停并跳到该帧。
+- 可查看当前帧的图层名称、原图和透明度，识别占位候选并单独显示图层；同时展示文件属性、解码耗时、位图内存、实绘帧率和渲染耗时。
+- 新增离线 X Log 解密：支持 `.xlog` 和包含多个日志的 ZIP，Key 仅保存在本机。解密结果可在 Finder 中打开，也可用 We Deck 打开 `.log` 文件并进入「用户日志分析」。
+]]></description>
+            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/WeDeck-v1.0.21.zip" length="15010511" type="application/octet-stream" sparkle:edSignature="Su3YfrgoQ7/XzHByIKakXDnsAP3XZzSXf8uaz5M7QkpR9ecUFhmdPDvAIbvjrKu/wMIpJCh103L9jogx9ryFCA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000021-1000020.delta" sparkle:deltaFrom="1000020" length="1525594" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="xR2lA0zorz58F5wfTdNrqZ1/hg0ipsL9cxT4dN/MiICQ7JjJezMHGC5gwz3hBcVmEshEL34oJhqmqjgXcfFADA=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000021-1000019.delta" sparkle:deltaFrom="1000019" length="2160530" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="I2Y3mqru9R48aX4/dEb7WrNPU9CEmfrRFzozjWnd84ziot7U8DesamGeLh4F0WiYBoyr3GfPuZ9JbhKkbKMXBw=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000021-1000018.delta" sparkle:deltaFrom="1000018" length="2280850" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="y3c8dwsFtScot8tOMB4/JHdzKf7hOfW4torSmhYsp95g8jEGBrwNocGAdXrsbiVVkwEDE0MIVvPhtRVcTBjpCA=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000021-1000017.delta" sparkle:deltaFrom="1000017" length="2301270" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="YmvlqXBGKx+UbZhq8Fv31S/hDBOQcGFZcXnS7VvAZgBmwaTz4su1oLQe0feJHIq2AMKgfy7HVfOwCfdQ5k5zAA=="/>
+                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000021-1000016.delta" sparkle:deltaFrom="1000016" length="7481806" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Hqi5LFC7S4fgwngLX8Ky2/JJCo6bKyuhmVCIpB3hZFouPOWkBBK58OhzNi0KWiBhQ5Iy5WkPELFKzf/mg/QFBw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.20</title>
             <pubDate>Fri, 20 Nov 2026 20:48:21 +0800</pubDate>
             <sparkle:version>1000020</sparkle:version>
@@ -20,27 +43,6 @@
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000020-1000018.delta" sparkle:deltaFrom="1000018" length="1586170" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="TNghhBJtn9O6xb76xWLygTaUQjMneFmMoW5hRIwoy9fzm9lVxWqWJF5mvz+FY6Hye6bOpvUeD3oIJWU2JYzKCw=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000020-1000017.delta" sparkle:deltaFrom="1000017" length="1595366" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="RhQck7flFIVQvWUN4KLIMnt4M01L/BWMcWKiMSTeCSWli36QPMKHFsdRJPcby2ji/YXVMRQGbR1ziEsnH/QbDw=="/>
                 <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000020-1000016.delta" sparkle:deltaFrom="1000016" length="6856518" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="20SxCOLIC9ZVG0Ji7vM5lk4IqH6o17OS4pDApdnaSQd1yuBfEmv1hALqVt5vOlgPTqyvc3vubQZr4R8EztJ4Aw=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.19</title>
-            <pubDate>Mon, 16 Nov 2026 15:09:51 +0800</pubDate>
-            <sparkle:version>1000019</sparkle:version>
-            <sparkle:shortVersionString>1.0.19</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <description sparkle:format="markdown"><![CDATA[- 模拟器独立于 We Deck 运行，退出 We Deck 后仍可继续使用，重新打开后可继续管理。
-- 支持复制模拟器配置，复用系统镜像并创建独立的新设备，不复制原设备的应用、账号和用户数据。
-- 支持删除已停止的模拟器，确认后移入废纸篓，并保留共享系统镜像和历史记录。
-- 优化自动化 UI 的运行状态、设备占用和进程清理，修复取消、异常退出及多入口操作时的记录一致性问题。
-- 完善回放报告校验、流程导入导出和证据记录，准确区分通过、失败、未验证与取消。
-- 修复 CLI 参数校验和 MCP 协议处理，统一桌面、CLI 与 MCP 的调用及报告规则。
-]]></description>
-            <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/WeDeck-v1.0.19.zip" length="13847893" type="application/octet-stream" sparkle:edSignature="+hxAQF6MzDWc89qky5mIWe4Ox0OVKIAoGKeekZkwckONUnrAv8byGRjKPIwlmdowXZTWIZMv93WmI7CDymdqDg=="/>
-            <sparkle:deltas>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000019-1000018.delta" sparkle:deltaFrom="1000018" length="922818" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="AfM0x1LzcLtgMWj2DaDnUotVs11fhalvYZhagh0C2uNjRATrFEELG+mKUbZFDqz64AGzvqstZZar2X+pF+OJAw=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000019-1000017.delta" sparkle:deltaFrom="1000017" length="960474" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="fxJT3RKVoV26kde5lkMba4DbKUowDFE3myxD38KNVPZ4Yqx29Wwl/abBNomcOQ+KFxwYUcSXZu7+qaI84pMVBg=="/>
-                <enclosure url="https://raw.githubusercontent.com/evanbiz08/AppUpdateHub/version_controller/downloads/We%20Deck1000019-1000016.delta" sparkle:deltaFrom="1000016" length="6495654" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="943248" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="wvf0a+Wok6/QwNe6M7YBDf+gDStzrXEHn/n4Z0F70f8lgU6S0N0wV7BC9AsOolSzyCMI2Sjdmc5mWpmRRJpvCw=="/>
             </sparkle:deltas>
         </item>
     </channel>
